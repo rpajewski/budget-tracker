@@ -8,7 +8,6 @@ fetch("/api/transaction")
   .then(data => {
     // save db data on global variable
     transactions = data;
-    console.log(transactions)
 
     populateTotal();
     populateTable();
@@ -123,7 +122,6 @@ function sendTransaction(isAdding) {
     }
   })
   .then(response => {   
-    console.log(response) 
     return response.json();
   })
   .then(data => {
@@ -138,7 +136,7 @@ function sendTransaction(isAdding) {
   })
   .catch(err => {
     // fetch failed, so save in indexed db
-    saveRecord(transaction)
+    saveTransaction(transaction)
 
     // clear form
     nameEl.value = "";

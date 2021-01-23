@@ -24,7 +24,7 @@ request.onerror = function(event) {
 }
 
 // if no connection save transaction
-function saveRecord(transactions) {
+function saveTransaction(transactions) {
     // open new transaction with db
     const transaction = db.transaction(['new_transaction'], 'readwrite')
 
